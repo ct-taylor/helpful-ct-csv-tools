@@ -13,7 +13,7 @@ if not len(sys.argv) == 3:
 path_csv_in = Path(sys.argv[1])
 path_csv_out = Path(sys.argv[2])
 
-validate1 = path_csv_in.is_file() and path_csv_in.suffix == '.csv'
+validate1 = path_csv_in.is_file() and path_csv_in.suffix.lower() == '.csv'
 validate2 = path_csv_out.is_file() == False
 
 if not validate2:
@@ -34,3 +34,5 @@ if validate1 and validate2:
                 new_ts = f"{datetime.strptime(olddate,'%Y-%m-%d').strftime('%m-%d-%Y')} {oldtime}"
                 row['Date'] = new_ts
                 writer.writerow(row)
+else:
+    print("Input file must be .csv")
