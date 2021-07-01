@@ -7,7 +7,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-if not len(sys.argv) == 3:
+if len(sys.argv) != 3:
     print("USAGE: python3 date_tool.py infile.csv outfile.csv")
     exit(1)
 
