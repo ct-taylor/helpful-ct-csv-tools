@@ -9,6 +9,7 @@ from pathlib import Path
 
 if not len(sys.argv) == 3:
     print("USAGE: python3 date_tool.py infile.csv outfile.csv")
+    exit(1)
 
 path_csv_in = Path(sys.argv[1])
 path_csv_out = Path(sys.argv[2])
